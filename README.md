@@ -1,8 +1,8 @@
-# SantiBrow - Landing Page
+# Mentoria dra. Wilsa
 
 Clone a repository using command 
     
-    git clone https://github.com/Webtech87/santibrow.git
+    git clone https://github.com/Webtech87/mentoria_dra_wilsa.git
 
 Create virtual environment using command 
 
