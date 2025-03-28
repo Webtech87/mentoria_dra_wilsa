@@ -20,7 +20,7 @@ Install dependencies
 In this project, we use PostgreSQL, therefore we recommend installing PostgreSQL. The installation of PostgreSQL goes beyond the scope of this document, so we will skip this part.
 After PostgreSQL installation lets create a new database with name **_santibrow_**
     
-    CREATE DATABASE santibrow;
+    CREATE DATABASE mentoria;
 
 All secret data files storage in **_.env_** file. Create in the same level with **_manage.py_** file
 to get all variables we should install **_python-dotenv_**(It already has been appointed in requirements.txt).
