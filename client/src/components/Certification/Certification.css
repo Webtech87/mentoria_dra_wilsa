@@ -1,0 +1,15 @@
+.content-area {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.certification_col{
+    width: 20%;
+}
+
+.certification{
+    background: #7C253A;
+    color: white;
+}
