@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import './Navbar.css';
 import i18n from "i18next";
-import logo from "../../assets/img/logo-santiclinic.png"
+import logo from "../../assets/img/dws-logo.svg"
 import { useTranslation } from "react-i18next";
 
 // Language type
@@ -32,26 +32,26 @@ const Navbar = () => {
     // Navigation items with correct section mapping
     const navItems: NavItem[] = [
         { 
-            id: 'treatments', 
-            label: t("navbar.1") || "Tratamentos", 
-            href: document.getElementById('treatments') ? '#treatments' : '/',
-            targetId: 'treatments'
+            id: 'about-me',
+            label: t("navbar.1"),
+            href: document.getElementById('about-me') ? '#about-me' : '/',
+            targetId: 'about-me'
         },
         { 
-            id: 'videos', 
-            label: t("navbar.2") || "Vídeos", 
-            href: '#videos',
-            targetId: 'videos'
+            id: 'results',
+            label: t("navbar.2"),
+            href: '#results',
+            targetId: 'results'
         },
         { 
-            id: 'plans', 
-            label: t("navbar.3") || "Planos", 
-            href: '#plans',
-            targetId: 'plans'
+            id: 'Enrollment',
+            label: t("navbar.3"),
+            href: '#Enrollment',
+            targetId: 'Enrollment'
         },
         { 
             id: 'contact', 
-            label: t("navbar.4") || "Contato", 
+            label: t("navbar.4"),
             href: '#contact',
             targetId: 'contact'
         }
@@ -435,7 +435,7 @@ const Navbar = () => {
                     <div className="navbar-logo">
                         <a href="/" aria-label="SantiClinic Home">
                             <div className="logo-container">
-                                <img src={logo} alt="SantiClinic Logo" />
+                                <img src={logo} alt="Wilsa Santiago Logo"/>
                             </div>
                         </a>
                     </div>

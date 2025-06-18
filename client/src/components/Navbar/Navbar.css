@@ -54,16 +54,17 @@
     transform: scale(1.05);
 }
 
-.navbar-logo img {
-    width: 149px;
-    height: 59px;
-    object-fit: contain;
-    transition: all 0.3s ease;
-}
-
 .logo-container {
     display: flex;
     align-items: center;
+}
+
+.logo-container h3 {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    border: #1EB958 2px solid;
+
 }
 
 /* Navigation links - SIMPLIFIED HOVER EFFECTS */
@@ -85,7 +86,7 @@
 
 .navbar-links a {
     position: relative;
-    color: #7B48BB;
+    color: #A5324E;
     font-size: 0.875rem;
     font-weight: 600;
     text-decoration: none;
@@ -133,7 +134,7 @@
 
 /* Remove all other hover effects - only color change */
 .navbar-links a:hover {
-    color: #5B21B6;
+    color: #ec4899;
 }
 
 .navbar-links a.active {
@@ -163,10 +164,9 @@
     overflow: hidden;
     z-index: 1;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    box-shadow: 
-        0 8px 20px -5px rgba(30, 185, 88, 0.3),
-        0 0 0 1px rgba(30, 185, 88, 0.1),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px -5px rgba(30, 185, 88, 0.3),
+    0 0 0 1px rgba(30, 185, 88, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,18 +199,28 @@
 }
 
 @keyframes glow {
-    0% { left: -100px; opacity: 0; }
-    20% { opacity: 1; }
-    40% { left: 400px; opacity: 0; }
-    100% { left: 400px; opacity: 0; }
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        left: 400px;
+        opacity: 0;
+    }
+    100% {
+        left: 400px;
+        opacity: 0;
+    }
 }
 
 .contact-button:hover {
     transform: translateY(-3px);
-    box-shadow: 
-        0 15px 30px -5px rgba(30, 185, 88, 0.4),
-        0 0 0 1px rgba(30, 185, 88, 0.15),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 30px -5px rgba(30, 185, 88, 0.4),
+    0 0 0 1px rgba(30, 185, 88, 0.15),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
     background: linear-gradient(135deg, #22c55e 0%, #16a085 100%);
 }
 
@@ -583,9 +593,8 @@
     overflow: hidden;
     z-index: 1;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    box-shadow: 
-        0 8px 25px -8px rgba(30, 185, 88, 0.4),
-        0 0 0 1px rgba(30, 185, 88, 0.1);
+    box-shadow: 0 8px 25px -8px rgba(30, 185, 88, 0.4),
+    0 0 0 1px rgba(30, 185, 88, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -598,9 +607,8 @@
 .mobile-contact-button:active {
     outline: none !important;
     border: none !important;
-    box-shadow: 
-        0 8px 25px -8px rgba(30, 185, 88, 0.4),
-        0 0 0 1px rgba(30, 185, 88, 0.1);
+    box-shadow: 0 8px 25px -8px rgba(30, 185, 88, 0.4),
+    0 0 0 1px rgba(30, 185, 88, 0.1);
 }
 
 .mobile-contact-button * {
@@ -618,9 +626,8 @@
 .mobile-contact-button:hover {
     transform: translateY(-2px);
     background: #16a085 !important;
-    box-shadow: 
-        0 15px 35px -8px rgba(30, 185, 88, 0.5),
-        0 0 0 1px rgba(30, 185, 88, 0.15);
+    box-shadow: 0 15px 35px -8px rgba(30, 185, 88, 0.5),
+    0 0 0 1px rgba(30, 185, 88, 0.15);
 }
 
 .mobile-contact-button:active {
@@ -968,9 +975,9 @@
     }
 
     .mobile-menu-container {
-        background: linear-gradient(135deg, 
-            rgba(223, 224, 226, 0.98) 0%, 
-            rgba(203, 204, 206, 0.98) 100%);
+        background: linear-gradient(135deg,
+        rgba(223, 224, 226, 0.98) 0%,
+        rgba(203, 204, 206, 0.98) 100%);
     }
 
     .mobile-nav a {
@@ -1023,6 +1030,6 @@
     .mobile-language-selector button:hover {
         transform: none;
     }
-    
+
 }
    
