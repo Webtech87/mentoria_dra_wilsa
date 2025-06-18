@@ -3,6 +3,8 @@ import Navbar from './components/Navbar/Navbar.tsx'
 import Footer from './components/Footer/Footer.tsx'
 import MMcosmetica from './components/MentoriaMicroCosmetica/MentoriaMicroCosmetica.tsx'
 import Certification from './components/Certification/Certification.tsx'
+import Practice from './components/Practice/Practice.tsx'
+
 
 import {Routes, Route} from 'react-router-dom'
 import PrivacyPolicy from './pages/privacy-policy/PrivacyPolicy'
@@ -19,6 +21,7 @@ function HomePage() {
             <Navbar />
             <MMcosmetica />
             <Certification />
+            <Practice />
             <Footer />
         </>
     )
