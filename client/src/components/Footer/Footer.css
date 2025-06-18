@@ -13,13 +13,10 @@ body {
 .page-container {
     min-height: 100vh;
     background-color: white;
-    margin-top: 70px;
 }
 
 .footer-container {
     margin: 0 auto;
-    padding: 0 20px;
-    max-width: 1400px;
 }
 
 .footer-container a {
@@ -42,7 +39,7 @@ body {
     padding: 40px;
     gap: 40px;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
     min-height: 500px;
 }
 

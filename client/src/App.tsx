@@ -1,6 +1,7 @@
 // src/App.tsx - WITHOUT Router wrapper (Router should be in main.tsx)
-import Navbar from './components/Navbar/Navbar'
-import Footer from './components/Footer/Footer'
+import Navbar from './components/Navbar/Navbar.tsx'
+import Footer from './components/Footer/Footer.tsx'
+import MMcosmetica from './components/MentoriaMicroCosmetica/MentoriaMicroCosmetica.tsx'
 import {Routes, Route} from 'react-router-dom'
 import PrivacyPolicy from './pages/privacy-policy/PrivacyPolicy'
 import CookiesPolicy from './pages/cookies-policy/CookiesPolicy'
@@ -14,6 +15,7 @@ function HomePage() {
     return (
         <>
             <Navbar />
+            <MMcosmetica />
             <Footer />
         </>
     )
