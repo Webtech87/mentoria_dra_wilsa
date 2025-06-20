@@ -8,8 +8,16 @@
     margin: 0 auto;
 }
 
+.bonus-container{
+    display: flex;
+    justify-content: space-around;
+}
+
 .bonus-header {
     text-align: left;
+    width: 40%;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .bonus-header h1 {
@@ -28,6 +36,7 @@
     line-height: 30px;
     letter-spacing: -0.8px;
     vertical-align: middle;
+    margin-top: 30px;
 }
 
 .bonus-context-area {
@@ -61,30 +70,21 @@
     margin: 30px 0;
 }
 
-.bonus-text-container button {
+.bonus-header button {
     background-color: #CE3E61;
     padding: 15px 30px;
     color: white;
-    margin-top: 20px;
-    border-radius: 100%;
+    margin-top: 50px;
+    border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-
-.bonus-context-area .list-item h2 {
-    margin-left: 20px;
-}
-
-.bonus-context-area .list-item p {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
 .bonus-list {
-    width: 80%;
+    margin-top: 100px;
+    width: 50%;
 }
 
 .bonus-item {
@@ -99,4 +99,10 @@
     letter-spacing: 0;
     vertical-align: middle;
     background-color: white;
+    margin-top: 25px;
+    padding: 10px;
+
 }
+
+
+
