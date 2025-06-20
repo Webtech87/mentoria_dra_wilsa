@@ -1,0 +1,86 @@
+.practice-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-area {
+    font-size: 28px;
+    color: #CE3E61;
+}
+
+.lRow {
+    width: 40%;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+}
+
+.lRow .image-area {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.lRow .image-area img {
+    width: 100%;
+    align-items: center;
+    aspect-ratio: 1 / 1;;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 1px #CE3E61;
+}
+
+.lRow .icons-area {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    margin: 50px auto;
+}
+
+.context-area {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rRow .main-text {
+    width: 50%;
+    margin: 100px auto;
+}
+
+.rRow {
+    color: #A5324E;
+}
+
+.rRow .list-area {
+    margin-top: 100px;
+}
+
+.rRow h1 {
+    font-size: 50px;
+}
+
+.rRow .list-item {
+    box-shadow: 0 0 20px 1px #CE3E61;
+    margin-bottom: 40px;
+    border-radius: 20px;
+}
+
+.rRow .list-item h2,
+.rRow .list-item p {
+    margin-left: 20px;
+}
+
+.list-item p {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    max-height: 500px; /* adjust if needed */
+    opacity: 1;
+}
+
+.list-item p.hidden {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+}

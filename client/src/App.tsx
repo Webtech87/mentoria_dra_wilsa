@@ -2,6 +2,15 @@
 import Navbar from './components/Navbar/Navbar.tsx'
 import Footer from './components/Footer/Footer.tsx'
 import MMcosmetica from './components/MentoriaMicroCosmetica/MentoriaMicroCosmetica.tsx'
+import Certification from './components/Certification/Certification.tsx'
+import Practice from './components/Practice/Practice.tsx'
+import WhyWe from "./components/WhyWe/WhyWe.tsx";
+import ForWho from "./components/ForWho/ForWho.tsx";
+import Bonus from "./components/Bonus/Bonus.tsx";
+import Faq from "./components/Faq/Faq.tsx";
+import {Followers} from "./components/Followers/Followers.tsx";
+import Vacancies from "./components/Vacancies/Vacancies.tsx";
+
 import {Routes, Route} from 'react-router-dom'
 import PrivacyPolicy from './pages/privacy-policy/PrivacyPolicy'
 import CookiesPolicy from './pages/cookies-policy/CookiesPolicy'
@@ -16,6 +25,14 @@ function HomePage() {
         <>
             <Navbar />
             <MMcosmetica />
+            <Certification />
+            <Practice />
+            <WhyWe />
+            <ForWho />
+            <Bonus />
+            <Faq />
+            <Followers />
+            <Vacancies />
             <Footer />
         </>
     )

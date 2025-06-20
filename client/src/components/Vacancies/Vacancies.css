@@ -1,0 +1,63 @@
+.vacancies-container {
+    width: 80%;
+    margin: 150px auto;
+    display: flex;
+    justify-content: space-between;
+    color: #CE3E61;
+}
+
+.text_container{
+    width: 45%;
+
+}
+
+
+.image_container img{
+    width: 70%;
+    border: 1px solid #CE3E61;
+    box-shadow: 0 0 30px 1px #CE3E61;
+    border-top-left-radius: 50% ;
+    border-top-right-radius:50% ;
+    border-bottom-right-radius:50% ;
+    border-bottom-left-radius: 50% ;
+}
+
+.schedule_container{
+    margin-top: 50px;
+    text-align: left;
+    border: 1px solid #CE3E61;
+    display: flex;
+    justify-content: left;
+    border-radius: 50px;
+    box-shadow: 0 0 30px 1px #CE3E61;
+}
+.sh_col{
+    width: 40%;
+    height: 200px;
+
+}
+.sh_col h3,
+.sh_col p{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.buttons-area{
+    margin-top: 50px;
+}
+
+.buttons-area button:first-child{
+    padding: 20px 30px;
+    color: white;
+    background-color: #CE3E61;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.buttons-area button:last-child{
+    padding: 20px 30px;
+    color: #CE3E61;
+    cursor: pointer;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
