@@ -64,7 +64,7 @@ const Practice = () => {
                 {items.map(item => (
                     <div className="list-item" key={item.id}>
                         <h2 onClick={() => handleToggle(item.id)}>
-                            {item.title}
+                            {item.id}. {item.title}
                         </h2>
                         {openId === item.id && (
                             <p>{item.description}</p>
