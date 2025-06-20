@@ -8,6 +8,7 @@ import WhyWe from "./components/WhyWe/WhyWe.tsx";
 import ForWho from "./components/ForWho/ForWho.tsx";
 import Bonus from "./components/Bonus/Bonus.tsx";
 import Faq from "./components/Faq/Faq.tsx";
+import {Followers} from "./components/Followers/Followers.tsx";
 
 import {Routes, Route} from 'react-router-dom'
 import PrivacyPolicy from './pages/privacy-policy/PrivacyPolicy'
@@ -29,6 +30,7 @@ function HomePage() {
             <ForWho />
             <Bonus />
             <Faq />
+            <Followers />
             <Footer />
         </>
     )
