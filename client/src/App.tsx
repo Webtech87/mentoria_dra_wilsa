@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer.tsx'
 import MMcosmetica from './components/MentoriaMicroCosmetica/MentoriaMicroCosmetica.tsx'
 import Certification from './components/Certification/Certification.tsx'
 import Practice from './components/Practice/Practice.tsx'
+import WhyWe from "./components/WhyWe/WhyWe.tsx";
 
 
 import {Routes, Route} from 'react-router-dom'
@@ -22,6 +23,7 @@ function HomePage() {
             <MMcosmetica />
             <Certification />
             <Practice />
+            <WhyWe />
             <Footer />
         </>
     )
