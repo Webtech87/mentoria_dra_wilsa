@@ -6,6 +6,7 @@ import Certification from './components/Certification/Certification.tsx'
 import Practice from './components/Practice/Practice.tsx'
 import WhyWe from "./components/WhyWe/WhyWe.tsx";
 import ForWho from "./components/ForWho/ForWho.tsx";
+import Bonus from "./components/Bonus/Bonus.tsx";
 
 import {Routes, Route} from 'react-router-dom'
 import PrivacyPolicy from './pages/privacy-policy/PrivacyPolicy'
@@ -25,6 +26,7 @@ function HomePage() {
             <Practice />
             <WhyWe />
             <ForWho />
+            <Bonus />
             <Footer />
         </>
     )
