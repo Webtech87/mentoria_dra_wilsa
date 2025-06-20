@@ -1,0 +1,60 @@
+.faq-container {
+    width: 80%;
+    color: #CE3E61;
+    margin: 120px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.faq-container .faq-list {
+    width: 45%;
+}
+
+.faq-container .faq-item {
+    border: 1px solid #CE3E61;
+    box-shadow: 0 0 20px 1px #CE3E61;
+    align-content: center;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26.4px;
+    letter-spacing: 0;
+    vertical-align: middle;
+    background-color: white;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+.faq-answer {
+    padding: 20px;
+    font-size: 16px;
+}
+
+.faq-text {
+    width: 500px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 56px;
+    letter-spacing: -0.24px; /* пример правильного значения */
+    vertical-align: middle;
+}
+
+.faq-text .watsapp_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: white;
+    padding:  20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+.faq-text button:hover{
+    box-shadow: 0 4px 20px #25D366;
+
+}
