@@ -18,9 +18,9 @@ const Footer = () => {
 
     const subjectOptions: SubjectOption[] = [
         {value: '', label: t("ftr.form.flds.obj.lt.0")},
-        {value: 'general', label: t("ftr.form.flds.obj.lt.1")},
-        {value: 'support', label: t("ftr.form.flds.obj.lt.2")},
-        {value: 'feedback', label: t("ftr.form.flds.obj.lt.3")},
+        {value: 'vacancies', label: "Quero garantir a minha vaga na mentoria"},
+        {value: 'more_info', label:"Gostaria de receber mais informações detalhadas"},
+        {value: 'requestion', label: "Tenho dúvidas sobre os pré-requisitos"},
         {value: 'others_subject', label: t("ftr.form.flds.obj.lt.4")}
     ];
 
