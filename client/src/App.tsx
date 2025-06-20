@@ -5,7 +5,7 @@ import MMcosmetica from './components/MentoriaMicroCosmetica/MentoriaMicroCosmet
 import Certification from './components/Certification/Certification.tsx'
 import Practice from './components/Practice/Practice.tsx'
 import WhyWe from "./components/WhyWe/WhyWe.tsx";
-
+import ForWho from "./components/ForWho/ForWho.tsx";
 
 import {Routes, Route} from 'react-router-dom'
 import PrivacyPolicy from './pages/privacy-policy/PrivacyPolicy'
@@ -24,6 +24,7 @@ function HomePage() {
             <Certification />
             <Practice />
             <WhyWe />
+            <ForWho />
             <Footer />
         </>
     )
