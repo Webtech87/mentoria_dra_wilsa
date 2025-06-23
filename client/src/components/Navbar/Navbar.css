@@ -438,6 +438,8 @@
 
 .mobile-menu.active .mobile-menu-container {
     transform: translateX(0);
+
+
 }
 
 /* Mobile menu header */
@@ -452,6 +454,8 @@
     position: sticky;
     top: 0;
     z-index: 10;
+
+
 }
 
 .mobile-menu-close {
@@ -492,6 +496,7 @@
 .mobile-nav {
     padding: 2rem 0;
     flex: 1;
+
 }
 
 .mobile-nav ul {
@@ -783,7 +788,24 @@
     /* Show mobile elements */
     .mobile-menu-button {
         display: flex;
+        color: #1EB958;
     }
+
+    .language-buttons {
+        width: 100px;
+
+        justify-content: center;
+    }
+
+
+    .language-buttons img {
+        display: none;
+    }
+
+    .language-buttons button {
+        color: #A5324E;
+    }
+
 
     .mobile-menu,
     .mobile-menu-overlay {
@@ -805,6 +827,7 @@
     .navbar {
         height: 70px;
         padding: 0;
+
     }
 
     .navbar-scrolled {
@@ -820,7 +843,9 @@
         height: 44px;
     }
 
+
     .mobile-menu-container {
+
         max-width: 280px;
         width: 280px;
         background: white !important;

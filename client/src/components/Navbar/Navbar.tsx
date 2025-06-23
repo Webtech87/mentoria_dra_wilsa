@@ -1,8 +1,8 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import {useState, useEffect, useCallback, useRef} from 'react';
 import './Navbar.css';
 import i18n from "i18next";
-import logo from "../../assets/img/dws-logo.svg"
-import { useTranslation } from "react-i18next";
+import logo from "../../assets/img/logo.png"
+import {useTranslation} from "react-i18next";
 
 // Language type
 type Language = 'pt' | 'en';
@@ -16,14 +16,14 @@ interface NavItem {
 }
 
 const Navbar = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentLanguage, setCurrentLanguage] = useState<Language>('pt');
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('');
     const [isClosing, setIsClosing] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
-    
+
     // Refs for accessibility and focus management
     const mobileMenuRef = useRef<HTMLDivElement>(null);
     const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -31,26 +31,26 @@ const Navbar = () => {
 
     // Navigation items with correct section mapping
     const navItems: NavItem[] = [
-        { 
+        {
             id: 'about-me',
             label: t("navbar.1"),
             href: document.getElementById('about-me') ? '#about-me' : '/',
             targetId: 'about-me'
         },
-        { 
+        {
             id: 'results',
             label: t("navbar.2"),
             href: '#results',
             targetId: 'results'
         },
-        { 
+        {
             id: 'Enrollment',
             label: t("navbar.3"),
             href: '#Enrollment',
             targetId: 'Enrollment'
         },
-        { 
-            id: 'contact', 
+        {
+            id: 'contact',
             label: t("navbar.4"),
             href: '#contact',
             targetId: 'contact'
@@ -60,7 +60,7 @@ const Navbar = () => {
     // Completely rewritten scroll handler with better logic
     useEffect(() => {
         let ticking = false;
-        
+
         const handleScroll = () => {
             if (!ticking && !isScrolling) {
                 requestAnimationFrame(() => {
@@ -71,7 +71,7 @@ const Navbar = () => {
                     if (!isScrolling) {
                         updateActiveSection();
                     }
-                    
+
                     ticking = false;
                 });
                 ticking = true;
@@ -81,11 +81,11 @@ const Navbar = () => {
         const updateActiveSection = () => {
             const navbarHeight = 100;
             const scrollPosition = window.scrollY + navbarHeight;
-            
+
             let newActiveSection = '';
             let bestMatch = null;
             let smallestDistance = Infinity;
-            
+
             // Find the section that is most prominently in view
             navItems.forEach(item => {
                 const element = document.getElementById(item.targetId);
@@ -94,43 +94,43 @@ const Navbar = () => {
                     const elementTop = rect.top + window.scrollY;
                     const elementBottom = elementTop + rect.height;
                     const elementCenter = elementTop + (rect.height / 2);
-                    
+
                     // Calculate distance from current scroll position to element center
                     const distance = Math.abs(scrollPosition - elementCenter);
-                    
+
                     // Check if the element is significantly in view
                     const viewportTop = window.scrollY + navbarHeight;
                     const viewportBottom = window.scrollY + window.innerHeight;
-                    
+
                     // Element is in view if any part of it is visible in the viewport
                     const isInView = elementTop < viewportBottom && elementBottom > viewportTop;
-                    
+
                     // Calculate how much of the element is visible
                     const visibleTop = Math.max(elementTop, viewportTop);
                     const visibleBottom = Math.min(elementBottom, viewportBottom);
                     const visibleHeight = Math.max(0, visibleBottom - visibleTop);
                     const visibilityPercentage = rect.height > 0 ? (visibleHeight / rect.height) : 0;
-                    
+
                     // Prefer elements that are more than 30% visible and closest to center
                     if (isInView && visibilityPercentage > 0.3 && distance < smallestDistance) {
                         smallestDistance = distance;
                         bestMatch = item.targetId;
                     }
-                    
+
                     console.log(`Section ${item.targetId}: visibility=${(visibilityPercentage * 100).toFixed(1)}%, distance=${distance.toFixed(0)}, inView=${isInView}`);
                 }
             });
-            
+
             // Use the best match if found
             if (bestMatch) {
                 newActiveSection = bestMatch;
             }
-            
+
             // Special case for when we're at the very top
             if (window.scrollY < 100) {
                 newActiveSection = '';
             }
-            
+
             // Only update if there's a significant change
             if (newActiveSection !== activeSection) {
                 console.log('Natural scroll - updating active section from', activeSection, 'to:', newActiveSection);
@@ -138,13 +138,13 @@ const Navbar = () => {
             }
         };
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        
+        window.addEventListener('scroll', handleScroll, {passive: true});
+
         // Initial check
         if (!isScrolling) {
             updateActiveSection();
         }
-        
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, [navItems, activeSection, isScrolling]);
 
@@ -152,7 +152,7 @@ const Navbar = () => {
     useEffect(() => {
         const body = document.body;
         const html = document.documentElement;
-        
+
         if (isMenuOpen) {
             const scrollY = window.scrollY;
             // Store scroll position more reliably
@@ -162,7 +162,7 @@ const Navbar = () => {
             body.style.width = '100%';
             body.style.overflow = 'hidden';
             html.style.overflow = 'hidden';
-            
+
             const mainContent = document.querySelector('main') || document.querySelector('#root > *:not(header)');
             if (mainContent) {
                 (mainContent as HTMLElement).style.filter = 'blur(3px)';
@@ -177,13 +177,13 @@ const Navbar = () => {
             body.style.overflow = '';
             html.style.overflow = '';
             body.removeAttribute('data-scroll-y');
-            
+
             // Only restore scroll if we have a position stored and we're not in the middle of a smooth scroll
             if (scrollY && !isScrolling) {
                 const scrollValue = scrollY.includes('-') ? parseInt(scrollY.replace('-', '').replace('px', '')) : parseInt(scrollY);
                 window.scrollTo(0, scrollValue);
             }
-            
+
             const mainContent = document.querySelector('main') || document.querySelector('#root > *:not(header)');
             if (mainContent) {
                 (mainContent as HTMLElement).style.filter = '';
@@ -197,7 +197,7 @@ const Navbar = () => {
             body.style.overflow = '';
             html.style.overflow = '';
             body.removeAttribute('data-scroll-y');
-            
+
             const mainContent = document.querySelector('main') || document.querySelector('#root > *:not(header)');
             if (mainContent) {
                 (mainContent as HTMLElement).style.filter = '';
@@ -227,7 +227,7 @@ const Navbar = () => {
                     event.preventDefault();
                     closeMenu();
                     break;
-                    
+
                 case 'Tab':
                     if (mobileMenuRef.current) {
                         const focusableElements = mobileMenuRef.current.querySelectorAll(
@@ -286,7 +286,7 @@ const Navbar = () => {
     const closeMenu = useCallback(() => {
         setIsClosing(true);
         setIsMenuOpen(false);
-        
+
         setTimeout(() => {
             setIsClosing(false);
         }, 400);
@@ -302,38 +302,38 @@ const Navbar = () => {
     // Completely rewritten smooth scroll with proper state management
     const handleSmoothScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
         e.preventDefault();
-        
+
         console.log('=== CLICK EVENT ===');
         console.log('Clicked link:', targetId);
         console.log('Current active section before click:', activeSection);
-        
+
         // Immediately set the active section and prevent scroll updates
         setActiveSection(targetId);
         setIsScrolling(true);
-        
+
         // Clear any existing scroll timeout
         if (scrollTimeoutRef.current) {
             clearTimeout(scrollTimeoutRef.current);
         }
-        
+
         try {
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 console.log('Target element found, scrolling to:', targetElement);
-                
+
                 // Close mobile menu first if open
                 if (isMenuOpen) {
                     // Store the current scroll position before closing menu
                     const currentScrollY = window.scrollY;
-                    
+
                     closeMenu();
-                    
+
                     // Wait for menu close animation and body scroll restoration
                     setTimeout(() => {
                         // Restore scroll position first
                         window.scrollTo(0, currentScrollY);
-                        
+
                         // Then perform smooth scroll after a short delay
                         setTimeout(() => {
                             performScroll(targetElement, targetId);
@@ -344,10 +344,10 @@ const Navbar = () => {
                 }
             } else {
                 console.warn(`Target element with ID "${targetId}" not found`);
-                console.log('Available elements with IDs:', 
+                console.log('Available elements with IDs:',
                     Array.from(document.querySelectorAll('[id]')).map(el => el.id)
                 );
-                
+
                 // Try fallback
                 const fallbackElement = document.querySelector(`section[id*="${targetId}"], div[id*="${targetId}"], .${targetId}`) as HTMLElement;
                 if (fallbackElement) {
@@ -391,7 +391,7 @@ const Navbar = () => {
 
         // Keep the active section locked during scrolling
         setActiveSection(targetId);
-        
+
         // Set a longer timeout to prevent scroll detection from overriding
         scrollTimeoutRef.current = setTimeout(() => {
             console.log('Scroll timeout completed, re-enabling scroll detection');
@@ -446,10 +446,10 @@ const Navbar = () => {
                             {navItems.map(item => {
                                 const isActive = activeSection === item.targetId;
                                 console.log(`Link ${item.label}: activeSection=${activeSection}, targetId=${item.targetId}, isActive=${isActive}`);
-                                
+
                                 return (
                                     <li key={item.id}>
-                                        <a 
+                                        <a
                                             href={item.href}
                                             onClick={(e) => handleSmoothScroll(e, item.targetId)}
                                             className={isActive ? 'active' : ''}
@@ -466,8 +466,8 @@ const Navbar = () => {
 
                     {/* Desktop Actions */}
                     <div className="desktop-actions navbar-actions">
-                        <a 
-                            href="https://wa.me/351915007427" 
+                        <a
+                            href="https://wa.me/351915007427"
                             className="contact-button"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -476,7 +476,7 @@ const Navbar = () => {
                             <span className="cta-text">{t("navbar.btn") || "Contactar"}</span>
                             <div className="cta-glow"></div>
                         </a>
-                        
+
                         <div className="language-selector" role="group" aria-label="Language selection">
                             <button
                                 className={currentLanguage === 'pt' ? 'active' : ''}
@@ -524,11 +524,42 @@ const Navbar = () => {
                         <span className="hamburger-line" aria-hidden="true"></span>
                         <span className="hamburger-line" aria-hidden="true"></span>
                     </button>
+
+                    <div className="language-buttons">
+                        <button
+                            className={currentLanguage === 'pt' ? 'active' : ''}
+                            onClick={() => switchLanguage('pt')}
+                            aria-label="Switch to Portuguese"
+                            aria-pressed={currentLanguage === 'pt'}
+                            type="button"
+                        >
+                            <img
+                                alt=""
+                                src="http://purecatamphetamine.github.io/country-flag-icons/3x2/PT.svg"
+                                role="presentation"
+                            />
+                            <span>PT</span>
+                        </button>
+                        <button
+                            className={currentLanguage === 'en' ? 'active' : ''}
+                            onClick={() => switchLanguage('en')}
+                            aria-label="Switch to English"
+                            aria-pressed={currentLanguage === 'en'}
+                            type="button"
+                        >
+                            <img
+                                alt=""
+                                src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg"
+                                role="presentation"
+                            />
+                            <span>EN</span>
+                        </button>
+                    </div>
                 </div>
             </header>
 
             {/* Mobile Menu Overlay */}
-            <div 
+            <div
                 className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}
                 onClick={handleOverlayClick}
                 aria-hidden={!isMenuOpen}
@@ -536,7 +567,7 @@ const Navbar = () => {
             ></div>
 
             {/* Mobile Menu */}
-            <div 
+            <div
                 ref={mobileMenuRef}
                 className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}
                 id="mobile-menu"
@@ -550,7 +581,7 @@ const Navbar = () => {
                         <div className="navbar-logo">
                             <a href="/" aria-label="SantiClinic Home">
                                 <div className="logo-container">
-                                    <img src={logo} alt="SantiClinic Logo" />
+                                    <img src={logo} alt="SantiClinic Logo"/>
                                 </div>
                             </a>
                         </div>
@@ -560,9 +591,12 @@ const Navbar = () => {
                             aria-label="Close navigation menu"
                             type="button"
                         >
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                                      strokeLinejoin="round"/>
+                                <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                                      strokeLinejoin="round"/>
                             </svg>
                         </button>
                     </div>
@@ -571,7 +605,7 @@ const Navbar = () => {
                         <h2 id="mobile-menu-title" className="sr-only">Navigation Menu</h2>
                         <ul>
                             {navItems.map((item, index) => (
-                                <li key={item.id} style={{ animationDelay: `${index * 0.1}s` }}>
+                                <li key={item.id} style={{animationDelay: `${index * 0.1}s`}}>
                                     <a
                                         href={item.href}
                                         onClick={(e) => handleSmoothScroll(e, item.targetId)}
@@ -592,8 +626,8 @@ const Navbar = () => {
                     </nav>
 
                     <div className="mobile-actions">
-                        <a 
-                            href="https://wa.me/351915007427" 
+                        <a
+                            href="https://wa.me/351915007427"
                             className="mobile-contact-button"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -602,40 +636,7 @@ const Navbar = () => {
                             <span className="cta-text">{t("navbar.btn") || "Contactar"}</span>
                             <div className="cta-glow"></div>
                         </a>
-                        
-                        <div className="mobile-language-selector" role="group" aria-label="Language selection">
-                            <span className="language-label">Language:</span>
-                            <div className="language-buttons">
-                                <button
-                                    className={currentLanguage === 'pt' ? 'active' : ''}
-                                    onClick={() => switchLanguage('pt')}
-                                    aria-label="Switch to Portuguese"
-                                    aria-pressed={currentLanguage === 'pt'}
-                                    type="button"
-                                >
-                                    <img
-                                        alt=""
-                                        src="http://purecatamphetamine.github.io/country-flag-icons/3x2/PT.svg"
-                                        role="presentation"
-                                    />
-                                    <span>PT</span>
-                                </button>
-                                <button
-                                    className={currentLanguage === 'en' ? 'active' : ''}
-                                    onClick={() => switchLanguage('en')}
-                                    aria-label="Switch to English"
-                                    aria-pressed={currentLanguage === 'en'}
-                                    type="button"
-                                >
-                                    <img
-                                        alt=""
-                                        src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg"
-                                        role="presentation"
-                                    />
-                                    <span>EN</span>
-                                </button>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>

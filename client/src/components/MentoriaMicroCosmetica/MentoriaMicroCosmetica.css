@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
 }
+
 .mentoria-microcosmetica h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -24,13 +25,14 @@
     font-size: 23px;
 }
 
-.img-container{
+.img-container {
     width: 514px;
     height: 514px;
     margin-top: 30px;
     border-radius: 50%;
 }
-.img-container img{
+
+.img-container img {
     width: 100%;
     border-radius: 50%;
     box-shadow: 0 0 30px 1px #CE3E61;
@@ -54,9 +56,40 @@
     margin: 0 auto;
 }
 
-.content-area{
+.content-area {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+    .mentoria-microcosmetica .content-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 100px auto;
+    }
+
+    .mentoria-microcosmetica .content-area .text-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mentoria-microcosmetica p,
+    .mentoria-microcosmetica h1 {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .mentoria-microcosmetica .img-container {
+        width: 100%;
+        padding-bottom: 300px;
+    }
+
+    .mentoria-microcosmetica {
+        height: 100%;
+    }
+
+
 }
 
