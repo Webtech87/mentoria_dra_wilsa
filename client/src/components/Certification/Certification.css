@@ -5,11 +5,27 @@
     padding: 50px 0;
 }
 
-.certification_col{
+.certification_col {
     width: 20%;
 }
 
-.certification{
+.certification {
     background: #7C253A;
     color: white;
+}
+
+@media (max-width: 991px) {
+    .certification .content-area {
+        width: 100%;
+    }
+
+    .certification .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .certification  {
+        display: none;
+    }
 }
