@@ -63,12 +63,23 @@ const Practice = () => {
             <div className="list">
                 {items.map(item => (
                     <div className="list-item" key={item.id}>
-                        <h2 onClick={() => handleToggle(item.id)}>
+                        <h2
+                            onClick={() => handleToggle(item.id)}
+                            style={
+                                openId === item.id
+                                    ? {
+                                        borderBottomRightRadius: "0px",
+                                        borderBottomLeftRadius: "0px",
+                                        borderTopRightRadius: "20px",
+                                        borderTopLeftRadius: "20px",
+                                        boxShadow: "0px 0px 5px 1px",
+                                    }
+                                    : undefined
+                            }
+                        >
                             {item.id}. {item.title}
                         </h2>
-                        {openId === item.id && (
-                            <p>{item.description}</p>
-                        )}
+                        {openId === item.id && <p>{item.description}</p>}
                     </div>
                 ))}
             </div>
@@ -77,9 +88,9 @@ const Practice = () => {
 
     return (
         <div className="practice">
-            <div className="practice-container">
-                <div className="context-area">
-                    <div className="lRow">
+            <div className="container">
+                <div className="content-area">
+                    <div className="img-container">
                         <div className="image-area">
                             <img src={img} alt="mentoria microcosmetica"/>
                         </div>
@@ -107,7 +118,7 @@ const Practice = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rRow">
+                    <div className="text-container">
                         <div className="main-text">
                             <h1>O que vais aprender na <span className="MCDifFont">prática</span>?</h1>
                             <p>Vais adquirir conhecimento técnico, visão estratégica e segurança para aplicar os
