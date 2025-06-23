@@ -56,7 +56,7 @@
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     box-shadow: 0 4px 20px #CE3E61;
-    padding: 20px ;
+    padding: 20px;
 }
 
 .image-area {
@@ -80,4 +80,31 @@
     justify-content: space-between;
     margin: 20px auto;
     width: 50%;
+}
+
+@media (max-width: 768px) {
+    .practice .content-area {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .practice .content-area .image-area{
+        width: 100%;
+    }
+
+    .practice .content-area .image-area .text-area{
+        width: 100%;
+    }
+
+
+    .practice .content-area .img-container,
+    .practice .content-area .text-container{
+        width: 100%;
+    }
+
+    .practice .content-area .text-container{
+        margin-top: 400px;
+    }
+
+
 }
