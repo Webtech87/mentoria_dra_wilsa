@@ -41,7 +41,6 @@
 
 .sh_col {
     width: 50%;
-    height: 200px;
     margin-bottom: 30px;
 
 }
@@ -77,13 +76,23 @@
     .vacancies .vacancies-container {
         flex-direction: column-reverse;
     }
+    .vacancies .text_container {
+        text-align: center;
+        width: 100%;
+    }
 
     .vacancies .vacancies-container .col {
         width: 100%;
         text-align: center;
     }
 
-    .image_container img {
+
+    .vacancies .why-we-img-container{
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .vacancies .image_container img {
         width: 80%;
         margin: 100px auto;
     }
