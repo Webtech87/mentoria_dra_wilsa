@@ -31,13 +31,27 @@
     font-size: 16px;
 }
 
+.faq-container .list-item p{
+    padding: 20px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 20.4px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0 4px 20px #CE3E61;
+}
+
+
+
 .faq-text {
     width: 500px;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 30px;
     line-height: 56px;
-    letter-spacing: -0.24px; /* пример правильного значения */
+    letter-spacing: -0.24px;
     vertical-align: middle;
 }
 
@@ -47,14 +61,38 @@
     gap: 8px;
     background-color: #25D366;
     color: white;
-    padding:  20px;
+    padding: 20px;
     border: none;
     border-radius: 25px;
     font-size: 20px;
     cursor: pointer;
     margin-top: 50px;
 }
-.faq-text button:hover{
-    box-shadow: 0 4px 20px #25D366;
 
+.faq-text button:hover {
+    box-shadow: 0 4px 20px #25D366;
+}
+
+@media (max-width: 768px) {
+    .faq-container {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .faq-text {
+        width: 100%;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+        order: 1;
+    }
+
+    .faq-text button {
+        margin: 100px auto 100px;
+
+    }
+
+    .faq-container .faq-list {
+        width: 100%;
+        order: 2;
+    }
 }
