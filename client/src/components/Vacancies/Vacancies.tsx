@@ -1,18 +1,16 @@
 import './Vacancies.css';
 import { FaUser } from 'react-icons/fa';
-
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa';
 import { GoLocation } from 'react-icons/go';
-
 import img from "./../../assets/img/vacancies.png"
 
 const Vacancies = () => {
     return (
         <div className="vacancies">
             <div className="vacancies-container">
-                <div className="image_container col">
-                    <img src={img} alt="vacancies"/>
+                <div className="why-we-img-container col">
+                    <img src={img} alt="Dra. Wilsa Santiago"/>
                 </div>
                 <div className="text_container col">
                     <div className="title_content">

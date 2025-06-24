@@ -559,6 +559,10 @@
         padding: 4rem 0;
     }
 
+    .follower_header {
+        width: 90%;
+    }
+
 
     .follower_list_container {
         padding: 0 1rem;
