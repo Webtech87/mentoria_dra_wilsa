@@ -2,6 +2,7 @@ import './WhyWe.css';
 import icon from './../../assets/img/icon-flowers-.svg'
 import foto from './../../assets/img/draWfoto1.png'
 
+
 const WhyWe = () => {
     interface WhyList {
         id: number;
@@ -35,29 +36,33 @@ const WhyWe = () => {
     return (
         <div className="why-we">
             <div className="why-we-container">
-                <div className="lRow">
+                <div className="text-container">
                     <div className="text-area">
                         <h1>Por que esta Mentoria é <span className="MCDifFont">Diferente</span>?</h1>
                         <p>Vais aprender técnicas genéricas. Vais dominar protocolos reais usados diariamente numa
                             clínica estética de referência, com foco absoluto em resultados naturais, seguros e
                             premium.</p>
-                    </div>
-                    <div className="data_list_area">
-                        <div className="list_area">
-                            {WhyList.map(item => (
-                                <div className="list-item" key={item.id}>
-                                    <img src={icon} alt="Icon"/>
-                                    <h2>{item.title}</h2>
-                                </div>
-                            ))}
+
+                        <div className="data_list_area">
+                            <div className="list_area">
+                                {WhyList.map(item => (
+                                    <div className="list-item" key={item.id}>
+                                        <div className="img_area"><img src={icon} alt="Icon"/></div>
+                                        <div className="title-area"><h2>{item.title}</h2>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="rRow">
+                <div className="why-we-img-container">
                     <img src={foto} alt="Dra. Wilsa Santiago"/>
                 </div>
             </div>
         </div>);
+
+
 };
 
 export default WhyWe;

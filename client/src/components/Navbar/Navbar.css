@@ -13,6 +13,8 @@
     overflow: hidden;
 }
 
+
+
 .navbar-background-blur {
     display: none;
 }
@@ -54,17 +56,13 @@
     transform: scale(1.05);
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
+.logo-container{
+    width: 100px;
 }
 
-.logo-container h3 {
-    display: flex;
-    align-items: center;
-    width: 200px;
-    border: #1EB958 2px solid;
 
+.logo-container img{
+    width: 100%;
 }
 
 /* Navigation links - SIMPLIFIED HOVER EFFECTS */
@@ -656,7 +654,8 @@
 }
 
 .language-buttons {
-    display: flex;
+    display: none;
+
     gap: 1rem;
     width: 100%;
     justify-content: center;
