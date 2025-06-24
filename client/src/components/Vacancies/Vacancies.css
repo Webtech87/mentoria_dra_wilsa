@@ -12,9 +12,15 @@
 }
 
 
-.why-we-img-container img {
+.why-we-img-container  {
+    width: 40%;
+}
+
+
+.why-we-img-container  img{
     border: 2px solid #aa163a;
     display: flex;
+    width: 108%;
     justify-content: left;
     align-items: center;
     margin-top: 20px;
@@ -24,6 +30,7 @@
 
 .schedule_container {
     margin-top: 50px;
+    padding: 20px;
     text-align: left;
     border: 1px solid #CE3E61;
     display: flex;
@@ -33,8 +40,9 @@
 }
 
 .sh_col {
-    width: 40%;
+    width: 50%;
     height: 200px;
+    margin-bottom: 30px;
 
 }
 

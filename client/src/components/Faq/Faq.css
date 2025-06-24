@@ -31,7 +31,7 @@
     font-size: 16px;
 }
 
-.faq-container .list-item p{
+.faq-container .list-item p {
     padding: 20px;
     font-size: 16px;
     font-family: 'Inter', sans-serif;
@@ -42,7 +42,6 @@
     border-bottom-left-radius: 20px;
     box-shadow: 0 4px 20px #CE3E61;
 }
-
 
 
 .faq-text {
@@ -71,6 +70,21 @@
 
 .faq-text button:hover {
     box-shadow: 0 4px 20px #25D366;
+}
+
+@media (max-width: 1200px) {
+    .faq-container {
+        width: 90%;
+    }
+
+    .faq-text {
+        text-align: center;
+        width: 40%;
+    }
+
+    .faq-text button {
+        margin: 100px auto;
+    }
 }
 
 @media (max-width: 768px) {

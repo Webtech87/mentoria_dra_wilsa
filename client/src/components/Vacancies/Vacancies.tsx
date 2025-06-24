@@ -9,10 +9,10 @@ const Vacancies = () => {
     return (
         <div className="vacancies">
             <div className="vacancies-container">
-                <div className="why-we-img-container col">
+                <div className="why-we-img-container">
                     <img src={img} alt="Dra. Wilsa Santiago"/>
                 </div>
-                <div className="text_container col">
+                <div className="text_container">
                     <div className="title_content">
                         <h1>As vagas são <span className="MCDifFont"> limitadas</span> e o teu futuro começa agora.</h1>
                         <p>Garante o teu lugar na Mentoria de Microcirurgia Cosmética da Dra.Wilsa Santiago e aprende as
