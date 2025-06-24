@@ -1,7 +1,7 @@
 import './Footer.css'
 import whatsapp from '../../assets/img/whasapp-logo.png'
 import {useTranslation} from "react-i18next";
-import logo from './../../assets/img/logo-santiclinic2.png';
+import dws from './../../assets/img/dws-logo.svg'
 import {Facebook, Instagram, Youtube} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {useState} from "react";
@@ -81,9 +81,9 @@ const Footer = () => {
     return (
         <div id="contact" className='page-container'>
             <div className='footer-container'>
-                <section className='footer'>
+                <div className='footer'>
                     <div className='footer-info'>
-                        <img className="logo" src={logo} alt="SantiClinic Logo"/>
+                        <img className="logo" src={dws} alt="SantiClinic Logo"/>
                         <span>{t("ftr.slogan")}</span>
                         <div className='social-media'>
                             <a href="https://www.instagram.com/santi_clinic/" target="_blank" rel="noopener noreferrer">
@@ -159,8 +159,7 @@ const Footer = () => {
                             </form>
                         </div>
                     </div>
-
-                </section>
+                </div>
                 <div className='copyright'>
                     <span>© {currentYear} SANTICLINIC. {t("ftr.bf")}.</span>
                 </div>

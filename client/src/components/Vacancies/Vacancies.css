@@ -72,6 +72,7 @@
 
     .vacancies .vacancies-container .col {
         width: 100%;
+        text-align: center;
     }
 
     .image_container img {
