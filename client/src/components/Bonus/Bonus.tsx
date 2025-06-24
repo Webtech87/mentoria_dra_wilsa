@@ -49,17 +49,26 @@ const Bonus = () => {
 
                 <div className="bonus-list">
                     {bonusList.map(item => (
-                        <div className="bonus-item" key={item.id}>
-                            <div className="bonus-title" onClick={() => toggleDescription(item.id)}>
-                                <strong>{item.id}.</strong> {item.title}
-                            </div>
-                            {openId === item.id && (
-                                <div className="bonus-description">
-                                    {item.description}
-                                </div>
-                            )}
-                        </div>
-                    ))}
+                    <div className="list-item" key={item.id}>
+                        <h2
+                            onClick={() => toggleDescription(item.id)}
+                            style={
+                                openId === item.id
+                                    ? {
+                                        borderBottomRightRadius: "0px",
+                                        borderBottomLeftRadius: "0px",
+                                        borderTopRightRadius: "20px",
+                                        borderTopLeftRadius: "20px",
+                                        boxShadow: "0px 0px 5px 1px",
+                                    }
+                                    : undefined
+                            }
+                        >
+                            {item.id}. {item.title}
+                        </h2>
+                        {openId === item.id && <p>{item.description}</p>}
+                    </div>
+                ))}
                 </div>
             </div>
 
