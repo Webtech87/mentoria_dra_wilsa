@@ -1,58 +1,10 @@
-
-.for-who .text-area h1{
-    font-family: Inter, sans-serif;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 56px;
-    letter-spacing: -0.5px;
-    vertical-align: middle;
-
+.for-who{
+    background-color: white;
 }
 
-.for-who .text-area p{
-    margin: 50px 0;
-}
-
-
-.for-who .list-item {
-    display: flex;
-    justify-content: left;
-    margin: 0 auto;
-    box-shadow: 0 0 20px 1px #CE3E61;
-    margin-bottom: 40px;
-    border-radius: 20px;
-    padding: 20px;
-    border: 1px solid #CE3E61;
-}
-
-.for-who .list-item h2 {
-    margin-left: 20px;
-    color: #CE3E61;
-}
-
-.for-who-container .rRow,
-.for-who-container .lRow {
-    margin-top: 100px;
-    width: 45%;
-
-}
-
-
-.for-who-container {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.for-who .lRow img {
-    width: 45%;
-    margin: 0 auto;
-    box-shadow: 0 0 50px 1px #CE3E61;
-    margin-bottom: 40px;
-    border-top-left-radius: 300px;
-    border-top-right-radius: 300px;
-    border-bottom-left-radius: 300px;
-    border-bottom-right-radius: 300px;
-    border: 1px solid #CE3E61;
+@media (max-width: 768px) {
+    .reverse-column{
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
