@@ -10,7 +10,8 @@
     "slogan": "Tratamentos de beleza personalizados para mulheres que merecem cuidado especial.",
     "contact": {
       "title": "Contacto",
-      "btn": "Fale Connosco"
+      "btn": "Fale Connosco",
+      "capcha": "Por favor, complete o CAPTCHA."
     },
     "policy": {
       "title": "Políticas",

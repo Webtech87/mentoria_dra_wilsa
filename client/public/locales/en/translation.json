@@ -10,7 +10,8 @@
     "slogan": "Personalized beauty treatments for women who deserve special care.",
     "contact": {
       "title": "Contact",
-      "btn": "Talk to Us"
+      "btn": "Talk to Us",
+      "capcha": "Please complete the CAPTCHA"
     },
     "policy": {
       "title": "Policies",

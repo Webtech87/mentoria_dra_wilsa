@@ -4,6 +4,7 @@ import {useTranslation} from "react-i18next";
 import dws from './../../assets/img/dws-logo.svg'
 import {Facebook, Instagram, Youtube} from 'lucide-react';
 import {Link} from 'react-router-dom';
+import ReCAPTCHA from 'react-google-recaptcha';
 import {useState} from "react";
 import axios from "axios";
 
@@ -19,7 +20,7 @@ const Footer = () => {
     const subjectOptions: SubjectOption[] = [
         {value: '', label: t("ftr.form.flds.obj.lt.0")},
         {value: 'vacancies', label: "Quero garantir a minha vaga na mentoria"},
-        {value: 'more_info', label:"Gostaria de receber mais informações detalhadas"},
+        {value: 'more_info', label: "Gostaria de receber mais informações detalhadas"},
         {value: 'requestion', label: "Tenho dúvidas sobre os pré-requisitos"},
         {value: 'others_subject', label: t("ftr.form.flds.obj.lt.4")}
     ];
@@ -52,10 +53,19 @@ const Footer = () => {
         }));
     };
 
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+
+    const handleCaptchaChange = (token: string | null) => {
+        setCaptchaToken(token);
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        if (!captchaToken) {
+            alert(t('ftr.contact.captcha'));
+            return;
+        }
         if (!formData.accepted) {
             alert(t("ftr.frm.errors.privacy"));
             return;
@@ -155,6 +165,10 @@ const Footer = () => {
                                     <span>{t("ftr.form.flds.axept")} <Link to="/politica-privacidade" target="_blank"
                                                                            rel="noopener noreferrer">{t("ftr.policy.lt.0")}</Link></span>
                                 </div>
+                                <ReCAPTCHA
+                                    sitekey="6LdwBG0rAAAAALf1qjHu1DuyxrTHu8_ADGaJ2YD4"
+                                    onChange={handleCaptchaChange}
+                                />
                                 <button>{t("ftr.form.flds.btn")}</button>
                             </form>
                         </div>
