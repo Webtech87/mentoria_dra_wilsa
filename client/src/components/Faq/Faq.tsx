@@ -58,20 +58,27 @@ const Faq = () => {
         <div className="faq-section">
             <div className="faq-container">
                 <div className="faq-list">
-                    {
-                        faqList.map(item => (
-                            <div className="faq-item" key={item.id}>
-                                <div className="faq-quest" onClick={() => toggleDescription(item.id)}>
-                                <strong>{item.id}.</strong> {item.quest}
-                            </div>
-                            {openId === item.id && (
-                                <div className="faq-answer">
-                                    {item.answer}
-                                </div>
-                            )}
-                            </div>
-                        ))
-                    }
+                    {faqList.map(item => (
+                    <div className="list-item" key={item.id}>
+                        <h2
+                            onClick={() => toggleDescription(item.id)}
+                            style={
+                                openId === item.id
+                                    ? {
+                                        borderBottomRightRadius: "0px",
+                                        borderBottomLeftRadius: "0px",
+                                        borderTopRightRadius: "20px",
+                                        borderTopLeftRadius: "20px",
+                                        boxShadow: "0px 0px 5px 1px",
+                                    }
+                                    : undefined
+                            }
+                        >
+                            {item.id}. {item.quest}
+                        </h2>
+                        {openId === item.id && <p>{item.answer}</p>}
+                    </div>
+                ))}
                 </div>
                 <div className="faq-text">
                     <h1>Dúvidas <span className="MCDifFont">Frequentes</span> sobre a Mentoria</h1>

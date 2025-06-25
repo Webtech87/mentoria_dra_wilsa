@@ -8,7 +8,7 @@
     margin: 0 auto;
 }
 
-.bonus-container{
+.bonus-container {
     display: flex;
     justify-content: space-around;
 }
@@ -104,5 +104,91 @@
 
 }
 
+
+.bonus .list-item p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-size: 16px;
+    line-height: 20.4px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0 4px 20px #CE3E61;
+    padding: 20px;
+}
+
+@media (max-width: 1400px) {
+    .bonus-header {
+        text-align: left;
+        width: 40%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .bonus-header h1 {
+        width: 500px;
+
+    }
+
+    .bonus-header p {
+        font-weight: 400;
+        width: 500px;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: -0.8px;
+        vertical-align: middle;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .bonus-header {
+        text-align: left;
+        width: 40%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .bonus-header h1 {
+        width: 80%;
+        font-size: 40px;
+
+    }
+
+    .bonus-header p {
+        width: 80%;
+        font-size: 20px;
+
+        margin-top: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .bonus-container {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .bonus-list {
+        margin-top: 0;
+        width: 100%;
+        padding-bottom: 100px;
+    }
+
+
+    .bonus-header {
+        text-align: center;
+        width: 100%;
+    }
+
+    .bonus-header h1 {
+        width: 100%;
+    }
+
+    .bonus-header p {
+        width: 100%;
+    }
+}
 
 

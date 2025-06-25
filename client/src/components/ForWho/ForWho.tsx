@@ -34,31 +34,52 @@ const ForWho = () => {
     ]
 
     return (
-         <div className="for-who">
-            <div className="for-who-container">
-                <div className="lRow">
+        <div className="why-we for-who">
+            <div className="why-we-container reverse-column">
+                <div className="why-we-img-container">
                     <img src={foto} alt="Dra. Wilsa Santiago"/>
                 </div>
-                <div className="rRow">
+                <div className="text-container">
                     <div className="text-area">
                         <h1>Para <span className="MCDifFont">quem</span> é esta Mentoria?</h1>
                         <p>Esta mentoria é ideal para ti se:</p>
-                    </div>
-                    <div className="data_list_area">
-                        <div className="list_area">
-                            {WhyList.map(item => (
-                                <div className="list-item" key={item.id}>
-                                    <img src={icon} alt="Icon"/>
-                                    <h2>{item.title}</h2>
-                                </div>
-                            ))}
+
+                        <div className="data_list_area">
+                            <div className="list_area">
+                                {WhyList.map(item => (
+                                    <div className="list-item" key={item.id}>
+                                        <div className="img_area"><img src={icon} alt="Icon"/></div>
+                                        <div className="title-area"><h2>{item.title}</h2>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </div>
-    );
+        </div>);
 };
 
 export default ForWho;
+
+
+//                    <img src={foto} alt="Dra. Wilsa Santiago"/>
+//                </div>
+//                <div className="rRow">
+//                    <div className="text-area">
+//                        <h1>Para <span className="MCDifFont">quem</span> é esta Mentoria?</h1>
+//                        <p>Esta mentoria é ideal para ti se:</p>
+//                    </div>
+//                    <div className="data_list_area">
+//                        <div className="list_area">
+//                            {WhyList.map(item => (
+//                                <div className="list-item" key={item.id}>
+//                                    <img src={icon} alt="Icon"/>
+//                                    <h2>{item.title}</h2>
+//                                </div>
+//                            ))}
+//                        </div>
+//                    </div>
+//                </div>

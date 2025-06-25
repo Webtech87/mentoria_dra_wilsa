@@ -6,24 +6,31 @@
     color: #CE3E61;
 }
 
-.text_container{
+.text_container {
     width: 45%;
 
 }
 
 
-.image_container img{
-    width: 70%;
-    border: 1px solid #CE3E61;
-    box-shadow: 0 0 30px 1px #CE3E61;
-    border-top-left-radius: 50% ;
-    border-top-right-radius:50% ;
-    border-bottom-right-radius:50% ;
-    border-bottom-left-radius: 50% ;
+.why-we-img-container  {
+    width: 40%;
 }
 
-.schedule_container{
+
+.why-we-img-container  img{
+    border: 2px solid #aa163a;
+    display: flex;
+    width: 108%;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 200px;
+    box-shadow: 0 0 20px 1px #aa163a;
+}
+
+.schedule_container {
     margin-top: 50px;
+    padding: 20px;
     text-align: left;
     border: 1px solid #CE3E61;
     display: flex;
@@ -31,22 +38,24 @@
     border-radius: 50px;
     box-shadow: 0 0 30px 1px #CE3E61;
 }
-.sh_col{
-    width: 40%;
-    height: 200px;
+
+.sh_col {
+    width: 50%;
+    margin-bottom: 30px;
 
 }
+
 .sh_col h3,
-.sh_col p{
+.sh_col p {
     margin-left: 20px;
     margin-top: 20px;
 }
 
-.buttons-area{
+.buttons-area {
     margin-top: 50px;
 }
 
-.buttons-area button:first-child{
+.buttons-area button:first-child {
     padding: 20px 30px;
     color: white;
     background-color: #CE3E61;
@@ -54,10 +63,47 @@
     cursor: pointer;
 }
 
-.buttons-area button:last-child{
+.buttons-area button:last-child {
     padding: 20px 30px;
     color: #CE3E61;
     cursor: pointer;
     text-decoration: underline;
     text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+    .vacancies .vacancies-container {
+        flex-direction: column-reverse;
+    }
+    .vacancies .text_container {
+        text-align: center;
+        width: 100%;
+    }
+
+    .vacancies .vacancies-container .col {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .vacancies .why-we-img-container{
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .vacancies .image_container img {
+        width: 80%;
+        margin: 100px auto;
+    }
+
+    .buttons-area{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons-area button{
+        width: 70%;
+        margin: 10px auto;
+    }
 }
